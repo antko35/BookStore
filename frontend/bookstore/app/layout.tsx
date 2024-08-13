@@ -27,7 +27,7 @@ export default function RootLayout({
             />
           </header>
           <Content style={{padding : "0 48px"}}>{children}</Content>
-          <Footer stule={{textAlign : "center"}}>
+          <Footer style={{textAlign : "center"}}>
             BookStore 
           </Footer>
         </Layout>

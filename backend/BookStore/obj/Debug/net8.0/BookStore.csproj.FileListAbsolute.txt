@@ -331,3 +331,4 @@ C:\Users\antko\BookStore\backend\BookStore\obj\Debug\net8.0\refint\BookStore.dll
 C:\Users\antko\BookStore\backend\BookStore\obj\Debug\net8.0\BookStore.pdb
 C:\Users\antko\BookStore\backend\BookStore\obj\Debug\net8.0\BookStore.genruntimeconfig.cache
 C:\Users\antko\BookStore\backend\BookStore\obj\Debug\net8.0\ref\BookStore.dll
+C:\Users\antko\BookStore\backend\BookStore\obj\Debug\net8.0\BookStore.sourcelink.json

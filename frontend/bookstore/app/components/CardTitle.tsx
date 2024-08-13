@@ -13,8 +13,8 @@ export const CardTitle = ({title, price}: Props) => {
         alignItems: "center",
         justifyContent: "space-between"
     }}>
-        <p className='card__title'>{title}</p>
-        <p className='card__price'>{price}</p>
+      <p className='card__title'>{title}</p>
+      <p className='card__price'>{price}</p>
 
     </div>
   )
