@@ -49,3 +49,4 @@ C:\Users\antko\BookStore\backend\BookStore.DataAccess\obj\Debug\net8.0\refint\Bo
 C:\Users\antko\BookStore\backend\BookStore.DataAccess\obj\Debug\net8.0\BookStore.DataAccess.pdb
 C:\Users\antko\BookStore\backend\BookStore.DataAccess\obj\Debug\net8.0\BookStore.DataAccess.genruntimeconfig.cache
 C:\Users\antko\BookStore\backend\BookStore.DataAccess\obj\Debug\net8.0\ref\BookStore.DataAccess.dll
+C:\Users\antko\BookStore\backend\BookStore.DataAccess\obj\Debug\net8.0\BookStore.DataAccess.sourcelink.json

@@ -49,3 +49,4 @@ C:\Users\antko\BookStore\backend\BookStore.Application\obj\Debug\net8.0\BookStor
 C:\Users\antko\BookStore\backend\BookStore.Application\obj\Debug\net8.0\refint\BookStore.Application.dll
 C:\Users\antko\BookStore\backend\BookStore.Application\obj\Debug\net8.0\BookStore.Application.pdb
 C:\Users\antko\BookStore\backend\BookStore.Application\obj\Debug\net8.0\ref\BookStore.Application.dll
+C:\Users\antko\BookStore\backend\BookStore.Application\obj\Debug\net8.0\BookStore.Application.sourcelink.json

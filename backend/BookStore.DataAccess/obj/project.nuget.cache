@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "IuJfU1oP0zqcf4t8ij4GdlB1wGbMynZUisZhdpuFnG/IX/IaD904VN26THQybOYl24CoAoBwNqp6ceiGI4V9+Q==",
+  "dgSpecHash": "ce7rLNQtvf3WoXM24R3qPIpfsagfPN+NxF2ydE/BAiSdVJOJzzMgc1/uPV/Qg6SczMXt4BnLN7GijpWN/uR6qQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\antko\\BookStore\\backend\\BookStore.DataAccess\\BookStore.DataAccess.csproj",
   "expectedPackageFiles": [
