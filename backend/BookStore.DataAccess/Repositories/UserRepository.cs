@@ -32,7 +32,7 @@ public class UserRepository : IUserRepository
     {
         var user = await _context.User
             .AsNoTracking()
-            .FirstOrDefaultAsync(u => u.Email == email) ?? throw new Exception();
+            .FirstOrDefaultAsync(u => u.Email == email) ?? throw new Exception("invalin email");
 
         return UserMappers.ToUserDto(user);
     }

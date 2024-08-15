@@ -23,7 +23,7 @@ namespace BookStore.Endpoints
 
         private static async Task<IResult> Login(LoginUserRequest request, UserService userService)
         {
-            var token = userService.Login(request.Password,request.Email);
+            var token = await userService.Login(request.Password,request.Email);
 
             return Results.Ok(token);
         }

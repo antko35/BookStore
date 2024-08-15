@@ -5,6 +5,10 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+var services = builder.Services;
+var configuration = builder.Configuration;
+
+services.Configure<JwtOptions>(configuration.GetSection(nameof(JwtOptions)));
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -21,7 +25,11 @@ builder.Services.AddDbContext<BookStoreDbContext>(
 builder.Services.AddScoped<IBooksRepository, BooksRepository>();
 builder.Services.AddScoped<IBooksService, BooksService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
-//builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IUserService, UserService>();
+
+builder.Services.AddScoped<PasswordHasher>();
+
+builder.Services.AddScoped<JWTProvider>();
 
 var app = builder.Build();
 
