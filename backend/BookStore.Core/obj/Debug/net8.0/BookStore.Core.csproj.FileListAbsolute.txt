@@ -27,8 +27,8 @@ C:\Users\antko\BookStore\backend\BookStore.Core\obj\Debug\net8.0\BookStore.Core.
 C:\Users\antko\BookStore\backend\BookStore.Core\obj\Debug\net8.0\BookStore.Core.AssemblyInfoInputs.cache
 C:\Users\antko\BookStore\backend\BookStore.Core\obj\Debug\net8.0\BookStore.Core.AssemblyInfo.cs
 C:\Users\antko\BookStore\backend\BookStore.Core\obj\Debug\net8.0\BookStore.Core.csproj.CoreCompileInputs.cache
+C:\Users\antko\BookStore\backend\BookStore.Core\obj\Debug\net8.0\BookStore.Core.sourcelink.json
 C:\Users\antko\BookStore\backend\BookStore.Core\obj\Debug\net8.0\BookStore.Core.dll
 C:\Users\antko\BookStore\backend\BookStore.Core\obj\Debug\net8.0\refint\BookStore.Core.dll
 C:\Users\antko\BookStore\backend\BookStore.Core\obj\Debug\net8.0\BookStore.Core.pdb
 C:\Users\antko\BookStore\backend\BookStore.Core\obj\Debug\net8.0\ref\BookStore.Core.dll
-C:\Users\antko\BookStore\backend\BookStore.Core\obj\Debug\net8.0\BookStore.Core.sourcelink.json

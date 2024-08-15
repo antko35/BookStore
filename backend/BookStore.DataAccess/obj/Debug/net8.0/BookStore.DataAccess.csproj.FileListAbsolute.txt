@@ -43,10 +43,10 @@ C:\Users\antko\BookStore\backend\BookStore.DataAccess\obj\Debug\net8.0\BookStore
 C:\Users\antko\BookStore\backend\BookStore.DataAccess\obj\Debug\net8.0\BookStore.DataAccess.AssemblyInfoInputs.cache
 C:\Users\antko\BookStore\backend\BookStore.DataAccess\obj\Debug\net8.0\BookStore.DataAccess.AssemblyInfo.cs
 C:\Users\antko\BookStore\backend\BookStore.DataAccess\obj\Debug\net8.0\BookStore.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\antko\BookStore\backend\BookStore.DataAccess\obj\Debug\net8.0\BookStore.DataAccess.sourcelink.json
 C:\Users\antko\BookStore\backend\BookStore.DataAccess\obj\Debug\net8.0\BookStore.DataAccess.csproj.CopyComplete
 C:\Users\antko\BookStore\backend\BookStore.DataAccess\obj\Debug\net8.0\BookStore.DataAccess.dll
 C:\Users\antko\BookStore\backend\BookStore.DataAccess\obj\Debug\net8.0\refint\BookStore.DataAccess.dll
 C:\Users\antko\BookStore\backend\BookStore.DataAccess\obj\Debug\net8.0\BookStore.DataAccess.pdb
 C:\Users\antko\BookStore\backend\BookStore.DataAccess\obj\Debug\net8.0\BookStore.DataAccess.genruntimeconfig.cache
 C:\Users\antko\BookStore\backend\BookStore.DataAccess\obj\Debug\net8.0\ref\BookStore.DataAccess.dll
-C:\Users\antko\BookStore\backend\BookStore.DataAccess\obj\Debug\net8.0\BookStore.DataAccess.sourcelink.json

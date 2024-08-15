@@ -1,8 +1,10 @@
+using BookStore.Core.Mappers;
 using BookStore.Core.Models;
 using BookStore.DataAccess;
 using BookStore.DataAccess.Entities;
+using Microsoft.EntityFrameworkCore;
 
-public class UserRepository
+public class UserRepository : IUserRepository
 {
     private readonly BookStoreDbContext _context;
     public UserRepository(BookStoreDbContext context)
@@ -26,9 +28,13 @@ public class UserRepository
         return userEntity.Id;
     }
 
-    /*public async Task<User> GetById(Guid id)
+    public async Task<User> GetByEmail(string email)
     {
         var user = await _context.User
-            .;
-    }*/
+            .AsNoTracking()
+            .FirstOrDefaultAsync(u => u.Email == email) ?? throw new Exception();
+
+        return UserMappers.ToUserDto(user);
+    }
+
 }
