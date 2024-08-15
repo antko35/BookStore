@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "M5ZDOtB5kc3SduiCVi1kgrP2gHX6Ob9H3n0L2tejBTO00AbAf5n+MJG8SuCtFJzkbFVQqL5o93o90iIfrwhdsA==",
+  "dgSpecHash": "RmXrDWkLDvBzbeFm0q+JOtz5SWs01w4jfSSW5l9vg75Zm2DNczq0tjwLb2lE2dPf3GgFYg5P9gXu7qfMJt7Hyg==",
   "success": true,
   "projectFilePath": "C:\\Users\\antko\\BookStore\\backend\\BookStore.Core\\BookStore.Core.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\antko\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

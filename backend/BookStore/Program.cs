@@ -20,6 +20,8 @@ builder.Services.AddDbContext<BookStoreDbContext>(
 
 builder.Services.AddScoped<IBooksRepository, BooksRepository>();
 builder.Services.AddScoped<IBooksService, BooksService>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+//builder.Services.AddScoped<IUserService, UserService>();
 
 var app = builder.Build();
 
@@ -35,6 +37,7 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
 
 app.UseCors(x =>
 {
