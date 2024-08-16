@@ -1,6 +1,7 @@
 ﻿using BookStore.Application.Services;
 using BookStore.Contracts;
 using BookStore.Core.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BookStore.Controllers
@@ -16,6 +17,7 @@ namespace BookStore.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public async Task<ActionResult<List<BooksResponse>>> GetBooks()
         {
             var books = await _booksService.GetAllBooks();
@@ -24,6 +26,7 @@ namespace BookStore.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public async Task<ActionResult<Guid>> CreateBook([FromBody] BooksRequest request)
         {
             var (book, error) = Book.Create(
@@ -40,12 +43,14 @@ namespace BookStore.Controllers
         }
 
         [HttpPut("{id:guid}")]
+        [Authorize]
         public async Task<ActionResult<Guid>> UpdateBook(Guid id,[FromBody] BooksRequest request)
         {
             var bookId = await _booksService.UpdateBook(id, request.Title, request.Description, request.Price);
             return Ok(bookId);
         }
         [HttpDelete("{id:guid}")]
+        [Authorize]
         public async Task<ActionResult<Guid>> DeleteBook(Guid id)
         {
             var bookId = await _booksService.DeleteBook(id);

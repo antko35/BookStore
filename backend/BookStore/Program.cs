@@ -1,6 +1,8 @@
 using BookStore.Application.Services;
 using BookStore.DataAccess;
 using BookStore.DataAccess.Repositories;
+using BookStore.Extensions;
+using Microsoft.AspNetCore.CookiePolicy;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,10 +10,16 @@ var builder = WebApplication.CreateBuilder(args);
 var services = builder.Services;
 var configuration = builder.Configuration;
 
-services.Configure<JwtOptions>(configuration.GetSection(nameof(JwtOptions)));
+
+services.AddApiAuthentication(configuration);
+
 // Add services to the container.
 
+
+services.Configure<JwtOptions>(configuration.GetSection(nameof(JwtOptions)));
+
 builder.Services.AddControllers();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -42,7 +50,16 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseCookiePolicy(new CookiePolicyOptions
+{
+    MinimumSameSitePolicy = SameSiteMode.Strict,
+    HttpOnly = HttpOnlyPolicy.Always,
+    Secure = CookieSecurePolicy.Always
+});
+
+app.UseAuthentication();
 app.UseAuthorization();
+/*app.UseAuthorization();*/
 
 app.MapControllers();
 
