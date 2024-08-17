@@ -22,8 +22,9 @@ namespace BookStore.Application.Services
         public string GenerateToken(User user)
         {
             Claim[] claims = new[]
-            {
-                new Claim("userId", user.Id.ToString())
+            { 
+                new Claim("userId", user.Id.ToString()),
+                new Claim("Admin","true")
             };
 
             var signingCredentials = new SigningCredentials(

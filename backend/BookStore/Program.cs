@@ -59,7 +59,6 @@ app.UseCookiePolicy(new CookiePolicyOptions
 
 app.UseAuthentication();
 app.UseAuthorization();
-/*app.UseAuthorization();*/
 
 app.MapControllers();
 

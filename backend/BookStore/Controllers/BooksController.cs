@@ -17,7 +17,7 @@ namespace BookStore.Controllers
         }
 
         [HttpGet]
-        [Authorize]
+        [Authorize(Policy = "AdminPolicy")]
         public async Task<ActionResult<List<BooksResponse>>> GetBooks()
         {
             var books = await _booksService.GetAllBooks();
