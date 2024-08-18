@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "YYgtuALeyD7a/PcO28N4YIjAMkBFfKaVbqPKRMlFoi8CTikNpWsNMFoTXaokFpGOzCWgayPjaw3DiHvVOUD2DA==",
+  "dgSpecHash": "BdR8z8qg1Gsoz9Cfn5DtjcBMIIYe0NYtCrtEh3auITcTuFS/uY+T1QJjgjhP8a+cGMNle3nWP/16wIdOaXX34w==",
   "success": true,
   "projectFilePath": "C:\\Users\\antko\\BookStore\\backend\\BookStore.Application\\BookStore.Application.csproj",
   "expectedPackageFiles": [

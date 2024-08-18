@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace BookStore.DataAccess.Entities
 {
-    public class UserRoleEntity
+    public class RolePermissionEntity
     {
-        public Guid UserId { get; set; }
-
         public int RoleId { get; set; }
+        public int PermissionId { get; set; }
     }
 }

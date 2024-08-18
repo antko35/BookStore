@@ -46,8 +46,8 @@ namespace BookStore.Extensions
             {
                 options.AddPolicy("AdminPolicy", policy =>
                 {
-                    /*policy.RequireClaim("Admin", "true");*/
-                    policy.Requirements.Add();
+                    policy.RequireClaim("Admin", "true");
+                   // policy.Requirements.Add();
                     // Infrastructure
                 });
             });
