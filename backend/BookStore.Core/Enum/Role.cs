@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BookStore.Core.Enum
 {
-    public enum Enum
+    public enum Role
     {
         Admin = 1,
         User = 2
