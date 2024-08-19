@@ -11,6 +11,10 @@ namespace BookStore.Infrastructure.Authentication
 {
     public class PermissionRequirement : IAuthorizationRequirement
     {
+        public PermissionRequirement(Permission[] permissions)
+        {
+            Permissions = permissions;
+        }
         public Permission[] Permissions { get; set; } = new Permission[0];
     }
 }

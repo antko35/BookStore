@@ -1,4 +1,5 @@
 ﻿using BookStore.Core.Models;
+using BookStore.Infrastructure.Authentication;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.Mapping;
@@ -23,8 +24,7 @@ namespace BookStore.Application.Services
         {
             Claim[] claims = new[]
             { 
-                new Claim("userId", user.Id.ToString()),
-                new Claim("Admin","true")
+                new Claim(CustomClaims.UserId, user.Id.ToString())
             };
 
             var signingCredentials = new SigningCredentials(

@@ -50,3 +50,5 @@ C:\Users\antko\BookStore\backend\BookStore.Application\obj\Debug\net8.0\refint\B
 C:\Users\antko\BookStore\backend\BookStore.Application\obj\Debug\net8.0\BookStore.Application.pdb
 C:\Users\antko\BookStore\backend\BookStore.Application\obj\Debug\net8.0\ref\BookStore.Application.dll
 C:\Users\antko\BookStore\backend\BookStore.Application\obj\Debug\net8.0\BookStore.Application.sourcelink.json
+C:\Users\antko\BookStore\backend\BookStore.Application\bin\Debug\net8.0\BookStore.Infrastructure.dll
+C:\Users\antko\BookStore\backend\BookStore.Application\bin\Debug\net8.0\BookStore.Infrastructure.pdb

@@ -1,0 +1,16 @@
+C:\Users\antko\BookStore\backend\Infrastructure\bin\Debug\net8.0\BookStore.Infrastructure.deps.json
+C:\Users\antko\BookStore\backend\Infrastructure\bin\Debug\net8.0\BookStore.Infrastructure.dll
+C:\Users\antko\BookStore\backend\Infrastructure\bin\Debug\net8.0\BookStore.Infrastructure.pdb
+C:\Users\antko\BookStore\backend\Infrastructure\bin\Debug\net8.0\BookStore.Core.dll
+C:\Users\antko\BookStore\backend\Infrastructure\bin\Debug\net8.0\BookStore.Core.pdb
+C:\Users\antko\BookStore\backend\Infrastructure\obj\Debug\net8.0\BookStore.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\antko\BookStore\backend\Infrastructure\obj\Debug\net8.0\BookStore.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\antko\BookStore\backend\Infrastructure\obj\Debug\net8.0\BookStore.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\antko\BookStore\backend\Infrastructure\obj\Debug\net8.0\BookStore.Infrastructure.AssemblyInfo.cs
+C:\Users\antko\BookStore\backend\Infrastructure\obj\Debug\net8.0\BookStore.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\antko\BookStore\backend\Infrastructure\obj\Debug\net8.0\BookStore.Infrastructure.sourcelink.json
+C:\Users\antko\BookStore\backend\Infrastructure\obj\Debug\net8.0\BookStore.Infrastructure.csproj.CopyComplete
+C:\Users\antko\BookStore\backend\Infrastructure\obj\Debug\net8.0\BookStore.Infrastructure.dll
+C:\Users\antko\BookStore\backend\Infrastructure\obj\Debug\net8.0\refint\BookStore.Infrastructure.dll
+C:\Users\antko\BookStore\backend\Infrastructure\obj\Debug\net8.0\BookStore.Infrastructure.pdb
+C:\Users\antko\BookStore\backend\Infrastructure\obj\Debug\net8.0\ref\BookStore.Infrastructure.dll

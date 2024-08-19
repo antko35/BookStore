@@ -17,7 +17,8 @@ namespace BookStore.Controllers
         }
 
         [HttpGet]
-        [Authorize(Policy = "AdminPolicy")]
+        [Authorize(Policy = "User")]
+        /*RequireAuthorization(policy => policy.AddRequirement(new PremissionRequirement[Permission.Read]))*/
         public async Task<ActionResult<List<BooksResponse>>> GetBooks()
         {
             var books = await _booksService.GetAllBooks();
@@ -26,7 +27,7 @@ namespace BookStore.Controllers
         }
 
         [HttpPost]
-        [Authorize]
+        [Authorize(Policy = "Admin")]
         public async Task<ActionResult<Guid>> CreateBook([FromBody] BooksRequest request)
         {
             var (book, error) = Book.Create(
