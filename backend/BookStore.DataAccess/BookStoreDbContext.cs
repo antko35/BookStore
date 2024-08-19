@@ -9,7 +9,7 @@ namespace BookStore.DataAccess
     public class BookStoreDbContext : DbContext
     {
         // Поле для хранения настроек авторизации
-        private readonly AuthorizationOptions _authOptions;
+        private AuthorizationOptions _authOptions;
 
         // Конструктор с внедрением зависимостей
         public BookStoreDbContext(DbContextOptions<BookStoreDbContext> options, IOptions<AuthorizationOptions> authOptions)
@@ -22,6 +22,9 @@ namespace BookStore.DataAccess
         public DbSet<UserEntity> User { get; set; }
         public DbSet<RoleEntity> Roles { get; set; }
         public DbSet<BookEntity> Books { get; set; }
+        public DbSet<PermissionEntity> PermissionEntity { get; set; }
+        public DbSet<UserRoleEntity> UserRoleEntity { get; set; }
+        public DbSet<RolePermissionEntity> RolePermissionEntity { get; set; }
 
         // Метод для настройки модели данных
         protected override void OnModelCreating(ModelBuilder modelBuilder)

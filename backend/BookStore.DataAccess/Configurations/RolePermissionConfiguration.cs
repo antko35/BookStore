@@ -22,12 +22,8 @@ namespace BookStore.DataAccess.Configurations
         {
             builder.HasKey(r => new { r.RoleId, r.PermissionId });
 
-            builder.HasData(ParseRolePermissions());
-        }
-
-        private RolePermissionEntity[] ParseRolePermissions()
-        {
-            return _authorization.RolePermissions
+            /*var result = ParseRolePermissions();*/
+            var result = _authorization.RolePermissions
                 .SelectMany(rp => rp.Permissions
                     .Select(p => new RolePermissionEntity
                     {
@@ -35,6 +31,20 @@ namespace BookStore.DataAccess.Configurations
                         PermissionId = (int)Enum.Parse<Permission>(p)
                     }))
                     .ToArray();
+            builder.HasData(result);
         }
+
+      /*  private RolePermissionEntity[] ParseRolePermissions()
+        {
+            var permis =  _authorization.RolePermissions
+                .SelectMany(rp => rp.Permissions
+                    .Select(p => new RolePermissionEntity
+                    {
+                        RoleId = (int)Enum.Parse<Role>(rp.Role),
+                        PermissionId = (int)Enum.Parse<Permission>(p)
+                    }))
+                    .ToArray();
+            return permis;
+        }*/
     }
 }

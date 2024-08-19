@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BookStore.Infrastructure.Authentication
 {
-    internal class PermissionRequirement
+    public class PermissionRequirement
     {
     }
 }

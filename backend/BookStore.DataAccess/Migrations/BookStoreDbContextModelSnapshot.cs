@@ -22,21 +22,6 @@ namespace BookStore.DataAccess.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("BookStore.DataAccess.Configurations.RolePermissionEntity", b =>
-                {
-                    b.Property<int>("RoleId")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("PermissionId")
-                        .HasColumnType("integer");
-
-                    b.HasKey("RoleId", "PermissionId");
-
-                    b.HasIndex("PermissionId");
-
-                    b.ToTable("RolePermissionEntity");
-                });
-
             modelBuilder.Entity("BookStore.DataAccess.Entities.BookEntity", b =>
                 {
                     b.Property<Guid>("Id")
@@ -128,6 +113,21 @@ namespace BookStore.DataAccess.Migrations
                         });
                 });
 
+            modelBuilder.Entity("BookStore.DataAccess.Entities.RolePermissionEntity", b =>
+                {
+                    b.Property<int>("RoleId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("PermissionId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("RoleId", "PermissionId");
+
+                    b.HasIndex("PermissionId");
+
+                    b.ToTable("RolePermissionEntity");
+                });
+
             modelBuilder.Entity("BookStore.DataAccess.Entities.UserEntity", b =>
                 {
                     b.Property<Guid>("Id")
@@ -153,20 +153,20 @@ namespace BookStore.DataAccess.Migrations
 
             modelBuilder.Entity("BookStore.DataAccess.Entities.UserRoleEntity", b =>
                 {
-                    b.Property<int>("RoleId")
-                        .HasColumnType("integer");
-
                     b.Property<Guid>("UserId")
                         .HasColumnType("uuid");
 
-                    b.HasKey("RoleId", "UserId");
+                    b.Property<int>("RoleId")
+                        .HasColumnType("integer");
 
-                    b.HasIndex("UserId");
+                    b.HasKey("UserId", "RoleId");
+
+                    b.HasIndex("RoleId");
 
                     b.ToTable("UserRoleEntity");
                 });
 
-            modelBuilder.Entity("BookStore.DataAccess.Configurations.RolePermissionEntity", b =>
+            modelBuilder.Entity("BookStore.DataAccess.Entities.RolePermissionEntity", b =>
                 {
                     b.HasOne("BookStore.DataAccess.Entities.PermissionEntity", null)
                         .WithMany()
