@@ -9,13 +9,13 @@ namespace BookStore.DataAccess
     public class BookStoreDbContext : DbContext
     {
         // Поле для хранения настроек авторизации
-        private AuthorizationOptions _authOptions;
+        private IOptions<AuthorizationOptions> _authOptions;
 
         // Конструктор с внедрением зависимостей
         public BookStoreDbContext(DbContextOptions<BookStoreDbContext> options, IOptions<AuthorizationOptions> authOptions)
             : base(options)
         {
-            _authOptions = authOptions.Value;
+            _authOptions = authOptions;
         }
 
         // Определение DbSet для сущностей
@@ -33,7 +33,7 @@ namespace BookStore.DataAccess
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(BookStoreDbContext).Assembly);
 
             // Применение специальной конфигурации для RolePermission
-            modelBuilder.ApplyConfiguration(new RolePermissionConfiguration(_authOptions));
+            modelBuilder.ApplyConfiguration(new RolePermissionConfiguration(_authOptions.Value));
         }
     }
 }

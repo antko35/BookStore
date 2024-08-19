@@ -1,8 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "Sx7D2TNQlgGQfuZmnn2LMYUOO0fJfaaIeuacNmrZIlAsyA8cTc82rlEmxvlvjyhOUJZovMzRYLRpc5wAi9z+hA==",
+  "dgSpecHash": "YhgDOJnFZQkgdukmYzRZokhcvx00lDG0okkliGtzR2rMnOI5oaZ5PArlJy6Cv0ACPk6HTyIANp5g6EZWD07+TQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\antko\\BookStore\\backend\\Infrastructure\\BookStore.Infrastructure.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\antko\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
+    "C:\\Users\\antko\\.nuget\\packages\\microsoft.aspnetcore.authorization\\8.0.8\\microsoft.aspnetcore.authorization.8.0.8.nupkg.sha512",
+    "C:\\Users\\antko\\.nuget\\packages\\microsoft.aspnetcore.metadata\\8.0.8\\microsoft.aspnetcore.metadata.8.0.8.nupkg.sha512",
+    "C:\\Users\\antko\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.1\\microsoft.extensions.dependencyinjection.abstractions.8.0.1.nupkg.sha512",
+    "C:\\Users\\antko\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.1\\microsoft.extensions.logging.abstractions.8.0.1.nupkg.sha512",
+    "C:\\Users\\antko\\.nuget\\packages\\microsoft.extensions.options\\8.0.2\\microsoft.extensions.options.8.0.2.nupkg.sha512",
+    "C:\\Users\\antko\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

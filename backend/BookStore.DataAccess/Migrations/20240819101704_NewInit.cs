@@ -9,19 +9,24 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace BookStore.DataAccess.Migrations
 {
     /// <inheritdoc />
-    public partial class newServices : Migration
+    public partial class NewInit : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AlterColumn<string>(
-                name: "Title",
-                table: "Books",
-                type: "character varying(250)",
-                maxLength: 250,
-                nullable: false,
-                oldClrType: typeof(string),
-                oldType: "text");
+            migrationBuilder.CreateTable(
+                name: "Books",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    Title = table.Column<string>(type: "character varying(250)", maxLength: 250, nullable: false),
+                    Description = table.Column<string>(type: "text", nullable: false),
+                    Price = table.Column<decimal>(type: "numeric", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Books", x => x.Id);
+                });
 
             migrationBuilder.CreateTable(
                 name: "PermissionEntity",
@@ -47,6 +52,20 @@ namespace BookStore.DataAccess.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Roles", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "User",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    UserName = table.Column<string>(type: "text", nullable: false),
+                    PasswordHash = table.Column<string>(type: "text", nullable: false),
+                    Email = table.Column<string>(type: "text", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_User", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -82,7 +101,7 @@ namespace BookStore.DataAccess.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_UserRoleEntity", x => new { x.RoleId, x.UserId });
+                    table.PrimaryKey("PK_UserRoleEntity", x => new { x.UserId, x.RoleId });
                     table.ForeignKey(
                         name: "FK_UserRoleEntity_Roles_RoleId",
                         column: x => x.RoleId,
@@ -123,14 +142,17 @@ namespace BookStore.DataAccess.Migrations
                 column: "PermissionId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_UserRoleEntity_UserId",
+                name: "IX_UserRoleEntity_RoleId",
                 table: "UserRoleEntity",
-                column: "UserId");
+                column: "RoleId");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "Books");
+
             migrationBuilder.DropTable(
                 name: "RolePermissionEntity");
 
@@ -143,14 +165,8 @@ namespace BookStore.DataAccess.Migrations
             migrationBuilder.DropTable(
                 name: "Roles");
 
-            migrationBuilder.AlterColumn<string>(
-                name: "Title",
-                table: "Books",
-                type: "text",
-                nullable: false,
-                oldClrType: typeof(string),
-                oldType: "character varying(250)",
-                oldMaxLength: 250);
+            migrationBuilder.DropTable(
+                name: "User");
         }
     }
 }
