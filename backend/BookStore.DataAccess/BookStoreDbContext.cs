@@ -25,6 +25,7 @@ namespace BookStore.DataAccess
         public DbSet<PermissionEntity> PermissionEntity { get; set; }
         public DbSet<UserRoleEntity> UserRoleEntity { get; set; }
         public DbSet<RolePermissionEntity> RolePermissionEntity { get; set; }
+        public DbSet<UserBookEntity> UserBooks { get; set; }
 
         // Метод для настройки модели данных
         protected override void OnModelCreating(ModelBuilder modelBuilder)

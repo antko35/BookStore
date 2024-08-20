@@ -155,6 +155,21 @@ namespace BookStore.DataAccess.Migrations
                         });
                 });
 
+            modelBuilder.Entity("BookStore.DataAccess.Entities.UserBookEntity", b =>
+                {
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("BookId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("UserId", "BookId");
+
+                    b.HasIndex("BookId");
+
+                    b.ToTable("UserBooks");
+                });
+
             modelBuilder.Entity("BookStore.DataAccess.Entities.UserEntity", b =>
                 {
                     b.Property<Guid>("Id")
@@ -208,6 +223,25 @@ namespace BookStore.DataAccess.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("BookStore.DataAccess.Entities.UserBookEntity", b =>
+                {
+                    b.HasOne("BookStore.DataAccess.Entities.BookEntity", "Book")
+                        .WithMany("UserBooks")
+                        .HasForeignKey("BookId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("BookStore.DataAccess.Entities.UserEntity", "User")
+                        .WithMany("UserBooks")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Book");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("BookStore.DataAccess.Entities.UserRoleEntity", b =>
                 {
                     b.HasOne("BookStore.DataAccess.Entities.RoleEntity", null)
@@ -221,6 +255,16 @@ namespace BookStore.DataAccess.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("BookStore.DataAccess.Entities.BookEntity", b =>
+                {
+                    b.Navigation("UserBooks");
+                });
+
+            modelBuilder.Entity("BookStore.DataAccess.Entities.UserEntity", b =>
+                {
+                    b.Navigation("UserBooks");
                 });
 #pragma warning restore 612, 618
         }
