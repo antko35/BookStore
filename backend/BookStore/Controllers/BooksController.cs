@@ -45,6 +45,7 @@ namespace BookStore.Controllers
 
         [HttpPut("{id:guid}")]
         [Authorize]
+        [Authorize(Policy = "Admin")]
         public async Task<ActionResult<Guid>> UpdateBook(Guid id,[FromBody] BooksRequest request)
         {
             var bookId = await _booksService.UpdateBook(id, request.Title, request.Description, request.Price);
@@ -52,6 +53,7 @@ namespace BookStore.Controllers
         }
         [HttpDelete("{id:guid}")]
         [Authorize]
+        [Authorize(Policy = "Admin")]
         public async Task<ActionResult<Guid>> DeleteBook(Guid id)
         {
             var bookId = await _booksService.DeleteBook(id);

@@ -9,7 +9,6 @@ namespace BookStore.Controllers
     public class UserController : ControllerBase
     {
         private readonly IUserService _userService;
-         private readonly HttpContext _context;
         public UserController(IUserService userService)
         {
             _userService = userService;

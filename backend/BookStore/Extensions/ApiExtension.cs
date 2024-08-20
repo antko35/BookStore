@@ -58,7 +58,7 @@ namespace BookStore.Extensions
                 options.AddPolicy("Admin", policy =>
                 {
                     policy.AddAuthenticationSchemes(JwtBearerDefaults.AuthenticationScheme);
-                    policy.Requirements.Add(new PermissionRequirement(new[] { Permission.Read, Permission.Create }));
+                    policy.Requirements.Add(new PermissionRequirement(new[] { Permission.Read, Permission.Create, Permission.Update, Permission.Delete }));
                 });
             });
         }

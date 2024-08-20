@@ -35,7 +35,7 @@ namespace BookStore.Infrastructure.Authentication
             var permissionService = scope.ServiceProvider.GetRequiredService<IPermissionService>();
             var permissions = await permissionService.GetPermissionsAsync(id);
 
-            if (permissions.Intersect(requirement.Permissions).Any())
+            if (requirement.Permissions.All(rp => permissions.Contains(rp)))
             {
                 context.Succeed(requirement);
             }

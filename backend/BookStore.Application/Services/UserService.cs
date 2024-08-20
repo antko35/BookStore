@@ -33,10 +33,7 @@ namespace BookStore.Application.Services
         public async Task<string> Login(string password, string email)
         {
             var user = await _userRepository.GetByEmail(email);
-            Console.WriteLine(password);
-            Console.WriteLine(user.PasswordHash);
             var result = _passwordHasher.Verify(password, user.PasswordHash);
-            Console.WriteLine(result);
             if (result == false)
             {
                 throw new Exception("Invalid password");

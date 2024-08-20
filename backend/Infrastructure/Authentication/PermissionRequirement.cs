@@ -15,6 +15,6 @@ namespace BookStore.Infrastructure.Authentication
         {
             Permissions = permissions;
         }
-        public Permission[] Permissions { get; set; } = new Permission[0];
+        public Permission[] Permissions { get; set; } = Array.Empty<Permission>();
     }
 }
