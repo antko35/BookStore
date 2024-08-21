@@ -36,6 +36,9 @@ builder.Services.AddScoped<IBooksService, BooksService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IPermissionService, PermissionService>();
+builder.Services.AddScoped<IPortfolioRepository, PortfolioRepository>();
+builder.Services.AddScoped<IPortfolioService, PortfolioService>();
+
 
 builder.Services.AddScoped<PasswordHasher>();
 

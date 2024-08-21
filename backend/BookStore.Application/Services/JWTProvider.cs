@@ -40,5 +40,10 @@ namespace BookStore.Application.Services
 
             return tokenValue;
         }
+        public string GetToken(User user)
+        {
+            var t = GenerateToken(user);
+            return t;
+        }
     }
 }

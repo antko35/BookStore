@@ -1,4 +1,5 @@
 ﻿using BookStore.Core.Models;
+using BookStore.DataAccess.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -8,13 +9,19 @@ using System.Threading.Tasks;
 
 namespace BookStore.DataAccess.Repositories
 {
-    public class PortfolioRepository
+    public class PortfolioRepository : IPortfolioRepository
     {
         private readonly BookStoreDbContext _context;
         public PortfolioRepository(BookStoreDbContext context)
         {
             _context = context;
         }
+       
+        public Task Add()
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<List<Book>> Get(Guid id)
         {
             var bookEntities = await _context.UserBooks
@@ -29,6 +36,17 @@ namespace BookStore.DataAccess.Repositories
                 .ToList();
 
             return books;
+        }
+
+        public async Task Add(string userId, Guid bookId)
+        {
+            var potrfolio = new UserBookEntity
+            {
+                UserId = Guid.Parse(userId),
+                BookId = bookId
+            };
+            await _context.UserBooks.AddAsync(potrfolio);
+            await _context.SaveChangesAsync();
         }
     }
 }
