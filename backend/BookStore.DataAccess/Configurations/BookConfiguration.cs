@@ -27,9 +27,9 @@ namespace BookStore.DataAccess.Configurations
                 .IsRequired();
 
             // Связь с UserBook
-            builder.HasMany(u => u.UserBooks)
+           /* builder.HasMany(u => u.UserBooks)
                 .WithOne(ub => ub.Book)
-                .HasForeignKey(ub => ub.BookId);
+                .HasForeignKey(ub => ub.BookId);*/
         }
     }
 }

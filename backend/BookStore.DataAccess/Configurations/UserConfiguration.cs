@@ -31,9 +31,9 @@ namespace BookStore.DataAccess.Configurations
                     l => l.HasOne<RoleEntity>().WithMany().HasForeignKey(r => r.RoleId),
                     r => r.HasOne<UserEntity>().WithMany().HasForeignKey(u => u.UserId));
 
-            builder.HasMany(u => u.UserBooks)
+           /* builder.HasMany(u => u.UserBooks)
            .WithOne(ur => ur.User)
-           .HasForeignKey(ur => ur.UserId);
+           .HasForeignKey(ur => ur.UserId);*/
         }
     }
 }

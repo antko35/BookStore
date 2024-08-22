@@ -17,13 +17,23 @@ namespace BookStore.Controllers
             _portfolioService = portfolioService;
             _context = context;
         }
+        [HttpGet("/getMyBooks")]
+        public async Task<ActionResult> GetMyBooks()
+        {
+            string userId = User.Claims.FirstOrDefault(x => x.Type == CustomClaims.UserId).Value;
+            if (userId == null)
+            {
+                throw new Exception("No token");
+            }
+            var books = await _portfolioService.GetAllBooks(Guid.Parse(userId));
+            return Ok(books);
+        }
         
         [HttpPost("/addToPortfolio/{bookId:Guid}")]
         public async Task<ActionResult> AddToPortfolio(Guid bookId)
         {
-            
             string userId = User.Claims.FirstOrDefault(x => x.Type == CustomClaims.UserId).Value;
-             await _portfolioService.AddToPortfolioAsync(userId, bookId);
+            await _portfolioService.AddToPortfolioAsync(userId, bookId);
 
             // var books = await _portfolioService.AddToPortfolio();
             return Ok();

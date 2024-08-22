@@ -1,4 +1,5 @@
-﻿using BookStore.DataAccess.Repositories;
+﻿using BookStore.Core.Models;
+using BookStore.DataAccess.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,11 @@ namespace BookStore.Application.Services
             _portfolioRepository = portfolioRepository;
         }
 
+        public async Task<List<Book>> GetAllBooks(Guid id)
+        {
+            var books = await _portfolioRepository.Get(id);
+            return books;
+        }
         public async Task<Task> AddToPortfolioAsync(string userId, Guid bookId)
         {
             await _portfolioRepository.Add(userId,bookId);

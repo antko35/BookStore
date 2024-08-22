@@ -1,4 +1,5 @@
-﻿using BookStore.Core.Models;
+﻿using BookStore.Core.Mappers;
+using BookStore.Core.Models;
 using BookStore.DataAccess.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -17,10 +18,6 @@ namespace BookStore.DataAccess.Repositories
             _context = context;
         }
        
-        public Task Add()
-        {
-            throw new NotImplementedException();
-        }
 
         public async Task<List<Book>> Get(Guid id)
         {
@@ -40,11 +37,15 @@ namespace BookStore.DataAccess.Repositories
 
         public async Task Add(string userId, Guid bookId)
         {
+            var Id = Guid.Parse(userId);
             var potrfolio = new UserBookEntity
             {
-                UserId = Guid.Parse(userId),
-                BookId = bookId
+                UserId = Id,
+                BookId = bookId,
+                User = _context.User.FirstOrDefault(u => u.Id == Id),
+                Book = _context.Books.FirstOrDefault(b => b.Id == bookId)
             };
+
             await _context.UserBooks.AddAsync(potrfolio);
             await _context.SaveChangesAsync();
         }

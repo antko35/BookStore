@@ -14,6 +14,16 @@ namespace BookStore.DataAccess.Configurations
         public void Configure(EntityTypeBuilder<UserBookEntity> builder)
         {
             builder.HasKey(r => new { r.UserId, r.BookId });
+
+            builder
+               .HasOne(ub => ub.User)
+               .WithMany(u => u.UserBooks)
+               .HasForeignKey(ub => ub.UserId);
+
+            builder
+                .HasOne(ub => ub.Book)
+                .WithMany(b => b.UserBooks)
+                .HasForeignKey(ub => ub.BookId);
         } 
     }
 }
