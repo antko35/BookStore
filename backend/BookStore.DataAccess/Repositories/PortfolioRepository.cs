@@ -49,5 +49,14 @@ namespace BookStore.DataAccess.Repositories
             await _context.UserBooks.AddAsync(potrfolio);
             await _context.SaveChangesAsync();
         }
+
+        public async Task Delete(string userId, Guid bookId)
+        {
+            var Id = Guid.Parse(userId);
+            await _context.UserBooks
+                .Where(u => u.UserId == Id && u.BookId == bookId)
+                .ExecuteDeleteAsync();
+            await _context.SaveChangesAsync();
+        }
     }
 }

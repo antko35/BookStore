@@ -26,5 +26,11 @@ namespace BookStore.Application.Services
             await _portfolioRepository.Add(userId,bookId);
             return Task.CompletedTask;
         }
+
+        public async Task<Task> Delete(string userId, Guid bookId)
+        {
+            await _portfolioRepository.Delete(userId, bookId);
+            return Task.CompletedTask;
+        }
     }
 }

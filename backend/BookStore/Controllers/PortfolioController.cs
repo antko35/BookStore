@@ -21,10 +21,6 @@ namespace BookStore.Controllers
         public async Task<ActionResult> GetMyBooks()
         {
             string userId = User.Claims.FirstOrDefault(x => x.Type == CustomClaims.UserId).Value;
-            if (userId == null)
-            {
-                throw new Exception("No token");
-            }
             var books = await _portfolioService.GetAllBooks(Guid.Parse(userId));
             return Ok(books);
         }
@@ -39,5 +35,12 @@ namespace BookStore.Controllers
             return Ok();
         }
 
+        [HttpDelete("/delete/{bookId:Guid}")]
+        public async Task<ActionResult> DeleteFromPortfolio(Guid bookId)
+        {
+            string userId = User.Claims.FirstOrDefault(x => x.Type == CustomClaims.UserId).Value;
+            await _portfolioService.Delete(userId, bookId);
+            return Ok();
+        }
     }
 }
