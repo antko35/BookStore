@@ -1,10 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "RmXrDWkLDvBzbeFm0q+JOtz5SWs01w4jfSSW5l9vg75Zm2DNczq0tjwLb2lE2dPf3GgFYg5P9gXu7qfMJt7Hyg==",
+  "dgSpecHash": "sk0y79gSrGLuOunGOTsACDFzobfIACLlG+xS7EGcWtWov+EzmM6cd2IlJMdeRSRTSYqIdnrWm+2VbPNw1iLTng==",
   "success": true,
   "projectFilePath": "C:\\Users\\antko\\BookStore\\backend\\BookStore.Core\\BookStore.Core.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\antko\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512"
+    "C:\\Users\\antko\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
+    "C:\\Users\\antko\\.nuget\\packages\\fluentvalidation\\11.5.1\\fluentvalidation.11.5.1.nupkg.sha512",
+    "C:\\Users\\antko\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
+    "C:\\Users\\antko\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.5.1\\fluentvalidation.dependencyinjectionextensions.11.5.1.nupkg.sha512",
+    "C:\\Users\\antko\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\2.1.0\\microsoft.extensions.dependencyinjection.abstractions.2.1.0.nupkg.sha512"
   ],
   "logs": []
 }

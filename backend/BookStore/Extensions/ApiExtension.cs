@@ -61,6 +61,8 @@ namespace BookStore.Extensions
                     policy.Requirements.Add(new PermissionRequirement(new[] { Permission.Read, Permission.Create, Permission.Update, Permission.Delete }));
                 });
             });
+
+            
         }
     }
 }

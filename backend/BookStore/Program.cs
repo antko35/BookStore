@@ -1,7 +1,9 @@
 using BookStore.Application.Services;
+using BookStore.Contracts;
 using BookStore.DataAccess;
 using BookStore.DataAccess.Repositories;
 using BookStore.Extensions;
+using FluentValidation;
 using Microsoft.AspNetCore.CookiePolicy;
 using Microsoft.EntityFrameworkCore;
 
@@ -39,6 +41,9 @@ builder.Services.AddScoped<IPermissionService, PermissionService>();
 builder.Services.AddScoped<IPortfolioRepository, PortfolioRepository>();
 builder.Services.AddScoped<IPortfolioService, PortfolioService>();
 
+builder.Services.AddValidatorsFromAssemblyContaining<BookRequestValidator>(); // регистрация валидации 
+builder.Services.AddValidatorsFromAssemblyContaining<RegisterUserValidator>();
+builder.Services.AddValidatorsFromAssemblyContaining<LoginUserValidator>();
 
 builder.Services.AddScoped<PasswordHasher>();
 
@@ -74,5 +79,6 @@ app.UseCors(x =>
     x.WithOrigins("http://localhost:3000");
     x.WithMethods().AllowAnyMethod();
 });
+
 
 app.Run();

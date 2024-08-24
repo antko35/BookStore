@@ -7,7 +7,9 @@ export interface BookRequest{
 };
 
 export const getAllBooks = async() => {
-    const response = await fetch("http://localhost:5138/Books");
+    const response = await fetch("http://localhost:5138/Books",{
+            credentials: "include"
+    });
     return response.json();
 };
 

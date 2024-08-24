@@ -1,10 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "35v7U2llQjU6wPAN/H1DxOIB4/W6uxLW4BzqbFC7jYKFDasclpU51QNOCaUzpKdJ/cp7qz8bsYVCjjIiVtTYwg==",
+  "dgSpecHash": "w5/2cyxtopcfp0tuAFtIfPOZsj/SVorp4+ODxzW3VpG+qK/VaR6cEB8OXVyzfJhGE8qSH/26KPNrzkznG+PiDw==",
   "success": true,
   "projectFilePath": "C:\\Users\\antko\\BookStore\\backend\\BookStore\\BookStore.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\antko\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
+    "C:\\Users\\antko\\.nuget\\packages\\fluentvalidation\\11.5.1\\fluentvalidation.11.5.1.nupkg.sha512",
+    "C:\\Users\\antko\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
+    "C:\\Users\\antko\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.5.1\\fluentvalidation.dependencyinjectionextensions.11.5.1.nupkg.sha512",
     "C:\\Users\\antko\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\antko\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\8.0.8\\microsoft.aspnetcore.authentication.jwtbearer.8.0.8.nupkg.sha512",
     "C:\\Users\\antko\\.nuget\\packages\\microsoft.aspnetcore.authorization\\8.0.8\\microsoft.aspnetcore.authorization.8.0.8.nupkg.sha512",

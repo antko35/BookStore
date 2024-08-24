@@ -1,8 +1,11 @@
 ﻿using BookStore.Application.Services;
 using BookStore.Contracts;
 using BookStore.Core.Models;
+using FluentValidation;
+using FluentValidation.Results;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace BookStore.Controllers
 {       
@@ -11,9 +14,11 @@ namespace BookStore.Controllers
     public class BooksController : ControllerBase
     {
         private readonly IBooksService _booksService;
-        public BooksController(IBooksService booksService) 
+        private readonly IValidator<BooksRequest> _validator;
+        public BooksController(IBooksService booksService, IValidator<BooksRequest> validator) 
         {
             _booksService = booksService;
+            _validator = validator;
         }
 
         [HttpGet]
@@ -30,6 +35,12 @@ namespace BookStore.Controllers
         [Authorize(Policy = "Admin")]
         public async Task<ActionResult<Guid>> CreateBook([FromBody] BooksRequest request)
         {
+            ValidationResult results = _validator.Validate(request);
+
+            if (! results.IsValid)
+            {
+                return BadRequest(results.Errors);
+            }
             var (book, error) = Book.Create(
                 Guid.NewGuid(),
                 request.Title,

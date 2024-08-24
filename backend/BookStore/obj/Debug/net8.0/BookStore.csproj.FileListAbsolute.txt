@@ -348,3 +348,6 @@ C:\Users\antko\BookStore\backend\BookStore\bin\Debug\net8.0\Microsoft.Extensions
 C:\Users\antko\BookStore\backend\BookStore\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
 C:\Users\antko\BookStore\backend\BookStore\bin\Debug\net8.0\BookStore.Infrastructure.dll
 C:\Users\antko\BookStore\backend\BookStore\bin\Debug\net8.0\BookStore.Infrastructure.pdb
+C:\Users\antko\BookStore\backend\BookStore\bin\Debug\net8.0\FluentValidation.dll
+C:\Users\antko\BookStore\backend\BookStore\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
+C:\Users\antko\BookStore\backend\BookStore\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll

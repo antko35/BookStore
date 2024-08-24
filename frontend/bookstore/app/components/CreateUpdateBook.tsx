@@ -48,18 +48,18 @@ export const CreateUpdateBook = ({ mode, values, isModalOpen, handleCancel, hand
             <div className='book__modal'>
                 <Input
                     value={title}
-                    onChange={(e) => setTitle(e.target.value)}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => setTitle(e.target.value)}
                     placeholder='Название'
                 />
                 <TextArea 
                     value={description}
-                    onChange={(e) => setDescription(e.target.value)}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => setDescription(e.target.value)}
                     autoSize={{minRows : 3, maxRows : 3}}
                     placeholder='Описание'
                 />
                 <Input
                     value={price}
-                    onChange={(e) => setPrice(Number(e.target.value))}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPrice(Number(e.target.value))}
                     placeholder='Цена'
                 />
             </div>
