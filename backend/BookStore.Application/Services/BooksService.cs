@@ -35,5 +35,10 @@ namespace BookStore.Application.Services
         {
             return await _booksRepository.Delete(id);
         }
+
+        public async Task<bool> IsBookExist(Guid Id)
+        {
+            return await _booksRepository.IsExist(Id);
+        }
     }
 }

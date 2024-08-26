@@ -4,6 +4,7 @@ using BookStore.DataAccess;
 using BookStore.DataAccess.Repositories;
 using BookStore.Extensions;
 using FluentValidation;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.CookiePolicy;
 using Microsoft.EntityFrameworkCore;
 
@@ -20,6 +21,19 @@ services.AddApiAuthentication(configuration);
 
 services.Configure<JwtOptions>(configuration.GetSection(nameof(JwtOptions)));
 services.Configure<AuthorizationOptions>(configuration.GetSection(nameof(AuthorizationOptions)));
+
+services.AddCors(options =>
+{
+    options.AddPolicy("AllowSpecificOrigin",
+        builder =>
+        {
+            builder.WithOrigins("http://localhost:3000") // Разрешаем запросы с этого источника
+                   .AllowAnyHeader()
+                   .AllowAnyMethod()
+                   .AllowCredentials(); // Если используются cookies
+        });
+});
+
 
 builder.Services.AddControllers();
 
@@ -73,12 +87,7 @@ app.UseAuthorization();
 app.MapControllers();
 
 
-app.UseCors(x =>
-{
-    x.WithHeaders().AllowAnyHeader();
-    x.WithOrigins("http://localhost:3000");
-    x.WithMethods().AllowAnyMethod();
-});
+app.UseCors("AllowSpecificOrigin");
 
 
 app.Run();

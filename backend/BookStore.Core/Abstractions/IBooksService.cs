@@ -7,6 +7,7 @@ namespace BookStore.Application.Services
         Task<Guid> CreateBook(Book book);
         Task<Guid> DeleteBook(Guid id);
         Task<List<Book>> GetAllBooks();
+        Task<bool> IsBookExist(Guid Id);
         Task<Guid> UpdateBook(Guid id, string title, string decsription, decimal price);
     }
 }

@@ -35,7 +35,7 @@ namespace BookStore.DataAccess.Repositories
             return books;
         }
 
-        public async Task Add(string userId, Guid bookId)
+        public async Task<Book> Add(string userId, Guid bookId)
         {
             var Id = Guid.Parse(userId);
             var potrfolio = new UserBookEntity
@@ -48,6 +48,8 @@ namespace BookStore.DataAccess.Repositories
 
             await _context.UserBooks.AddAsync(potrfolio);
             await _context.SaveChangesAsync();
+            var book = Book.Create(potrfolio.Book.Id, potrfolio.Book.Title, potrfolio.Book.Description, potrfolio.Book.Price).book;
+            return book;
         }
 
         public async Task Delete(string userId, Guid bookId)
@@ -57,6 +59,13 @@ namespace BookStore.DataAccess.Repositories
                 .Where(u => u.UserId == Id && u.BookId == bookId)
                 .ExecuteDeleteAsync();
             await _context.SaveChangesAsync();
+        }
+
+        public async Task<bool> FindPortfolio(string userId, Guid bookId)
+        {
+            var Id = Guid.Parse(userId);
+            var exist = await _context.UserBooks.AnyAsync(k => k.UserId == Id && k.BookId == bookId);
+            return exist;
         }
     }
 }

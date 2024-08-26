@@ -63,5 +63,10 @@ namespace BookStore.DataAccess.Repositories
 
             return id;
         }
+
+        public async Task<bool> IsExist(Guid Id)
+        {
+            return await _context.Books.AnyAsync(b => b.Id == Id);
+        }
     }
 }

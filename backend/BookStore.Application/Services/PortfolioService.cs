@@ -21,16 +21,22 @@ namespace BookStore.Application.Services
             var books = await _portfolioRepository.Get(id);
             return books;
         }
-        public async Task<Task> AddToPortfolioAsync(string userId, Guid bookId)
+        public async Task<Book> AddToPortfolioAsync(string userId, Guid bookId)
         {
-            await _portfolioRepository.Add(userId,bookId);
-            return Task.CompletedTask;
+            var book = await _portfolioRepository.Add(userId,bookId);
+            return book;
         }
 
         public async Task<Task> Delete(string userId, Guid bookId)
         {
             await _portfolioRepository.Delete(userId, bookId);
             return Task.CompletedTask;
+        }
+
+        public async Task<bool> IsInPortfolio(string userId, Guid bookId)
+        {
+            var exist = await _portfolioRepository.FindPortfolio(userId, bookId);
+            return exist;
         }
     }
 }

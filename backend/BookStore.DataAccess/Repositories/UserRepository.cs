@@ -16,7 +16,7 @@ public class UserRepository : IUserRepository
     public async Task<Guid> Add(User user)
     {
         var roleEntity = await _context.Roles
-            .SingleOrDefaultAsync(r => r.Id == (int)Role.User) // тут исправить для админа
+            .SingleOrDefaultAsync(r => r.Id == (int)Role.Admin) // тут исправить для админа
             ?? throw new InvalidOperationException();
 
         var userEntity = new UserEntity()

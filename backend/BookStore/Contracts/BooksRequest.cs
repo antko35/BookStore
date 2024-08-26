@@ -18,7 +18,7 @@ namespace BookStore.Contracts
             RuleFor(x => x.Price)
                 .NotEmpty().WithMessage("Price is required.")
                 .GreaterThan(0).WithMessage("Price must be greater than 0.")
-                .PrecisionScale(2, 18, true).WithMessage("Price cannot have more than 2 decimal places.");
+                .PrecisionScale(18, 2, true).WithMessage("Price cannot have more than 2 decimal places.");
         }
     }
 }

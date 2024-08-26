@@ -7,7 +7,7 @@ import { text } from "stream/consumers";
 const items = [
   {key : "home", label: <Link href={"/"}>Home</Link>},
   {key : "books", label: <Link href={"/books"}>Books</Link>},
-  
+  {key : "profile", label: <Link href={"/profile"}>profile</Link>}
 ]
 
 export default function RootLayout({
